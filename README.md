@@ -35,7 +35,7 @@ Datasheet: https://ww1.microchip.com/downloads/aemDocuments/documents/APID/Produ
 
 ## Usage
 
-Tested with 128x160x16_SPI.
+Tested with https://github.com/RobTillaart/MCP23S17.
 
 To use this chip in your project, include it as a dependency in your `diagram.json` file:
 
@@ -55,7 +55,7 @@ Then, add the chip to your circuit by adding a `mcp23s17` item to the `parts` se
 ```
 
 ## Screenshot
-![Usage](wokwi.png)
+![Demo](wokwi.png)
 
 # Development
 
