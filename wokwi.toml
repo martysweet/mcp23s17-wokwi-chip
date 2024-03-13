@@ -1,0 +1,8 @@
+[wokwi]
+version = 1
+elf = 'test/example/build/arduino.avr.uno/example.ino.elf'
+firmware = 'test/example/build/arduino.avr.uno/example.ino.hex'
+
+[[chip]]
+name = 'mcp23s17'
+binary = 'dist/chip.wasm'

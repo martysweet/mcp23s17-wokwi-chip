@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -9, "left": -0.6, "attrs": {} },
+    { "type": "chip-mcp23s17", "id": "chip2", "top": -123.78, "left": 436.8, "attrs": {} },
+    { "type": "wokwi-led", "id": "led-a0", "top": -186, "left": 600, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led-a1", "top": -186, "left": 620, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led-a2", "top": -186, "left": 640, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led-a3", "top": -186, "left": 660, "attrs": { "color": "red" } },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": -134.4, "left": 709.8, "attrs": {} },
+    {
+      "type": "wokwi-ks2e-m-dc5",
+      "id": "relay1",
+      "top": -13.7,
+      "left": 598.5,
+      "rotate": 180,
+      "attrs": {}
+    },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": 57.6, "left": 709.8, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -13.2,
+      "left": 685.4,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 23.8, "left": 647.24, "rotate": 90, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 88,
+      "left": 561,
+      "rotate": 180,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "uno:13", "chip12:SCK", "green", [ "v0" ] ],
+    [ "uno:11", "chip2:MOSI", "green", [ "v0" ] ],
+    [ "uno:8", "chip2:RST", "green", [ "v0" ] ],
+    [ "chip2:CS", "uno:10", "green", [ "h0" ] ],
+    [ "chip2:VCC", "uno:5V", "red", [ "h-28.8", "v268.8", "h-215" ] ],
+    [ "uno:GND.2", "chip2:GND", "black", [ "v28.7", "h215.1", "v-249.6" ] ],
+    [ "uno:13", "chip2:SCK", "green", [ "v0" ] ],
+    [ "uno:12", "chip2:MISO", "green", [ "v0" ] ],
+    [ "chip2:A0", "chip2:A4", "#8f4814", [ "h11.41", "v38.4" ] ],
+    [ "chip2:A1", "chip2:A5", "red", [ "h21.01", "v38.4" ] ],
+    [ "chip2:A2", "chip2:A6", "orange", [ "h30.61", "v38.4" ] ],
+    [ "chip2:A3", "chip2:A7", "gold", [ "h40.21", "v38.4" ] ],
+    [ "led-a0:A", "chip2:A0", "#8f4814", [ "v0" ] ],
+    [ "led-a1:A", "chip2:A1", "red", [ "v0" ] ],
+    [ "led-a2:A", "chip2:A2", "orange", [ "v0" ] ],
+    [ "led-a3:A", "chip2:A3", "gold", [ "v0" ] ],
+    [ "led-a0:C", "gnd1:GND", "black", [ "v9.6", "h95.4" ] ],
+    [ "led-a1:C", "gnd1:GND", "black", [ "v0" ] ],
+    [ "led-a2:C", "gnd1:GND", "black", [ "v0" ] ],
+    [ "led-a3:C", "gnd1:GND", "black", [ "v0" ] ],
+    [ "chip2:B1", "relay1:COIL1", "green", [ "h0" ] ],
+    [ "relay1:COIL2", "gnd2:GND", "green", [ "v0" ] ],
+    [ "relay1:NO1", "gnd2:GND", "green", [ "v-20.4", "h48" ] ],
+    [ "relay1:NO2", "led1:A", "green", [ "v0" ] ],
+    [ "led1:C", "gnd2:GND", "green", [ "v0" ] ],
+    [ "relay1:P2", "vcc1:VCC", "green", [ "v0" ] ],
+    [ "chip2:B0", "relay1:P1", "green", [ "h0" ] ],
+    [ "chip2:B7", "led2:A", "green", [ "v0" ] ],
+    [ "led2:C", "gnd2:GND", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
