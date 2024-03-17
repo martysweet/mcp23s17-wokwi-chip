@@ -41,7 +41,7 @@ To use this chip in your project, include it as a dependency in your `diagram.js
 
 ```json
   "dependencies": {
-    "mcp23s17": "github:martysweet/mcp23s17-wokwi-chip@1.0.0"
+    "chip-mcp23s17": "github:martysweet/mcp23s17-wokwi-chip@1.0.0"
   }
 ```
 
